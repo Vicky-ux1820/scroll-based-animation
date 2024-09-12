@@ -1,0 +1,81 @@
+:root{
+    --salmon:#EF9D71;
+    --black:#000;
+    --white:#fff;
+    --cyan: #AEDEE0;
+    --dark-salmon:rgba(43, 9, 5, 0.669);
+    --dark-cyan:rgba(2, 17, 17, 0.848);
+}
+
+
+
+
+
+@font-face {
+    font-family: Machina;
+    src: url(./machina.ttf);
+}
+@font-face {
+    font-family: Satoshi;
+    src: url(./satoshi.ttf);
+}
+
+body{
+  transition: background-color ease-out 0.5s;
+}
+
+*::selection{
+    background-color: var(--salmon);
+}
+
+.video-div{
+    clip-path: circle(var(--clip) at 50% 50%);
+}
+
+body[theme="black"]{
+    background-color: var(--black);
+}
+body[theme="black"] .section{
+    color: var(--white);
+}
+
+body[theme="cyan"]{
+    background-color: var(--cyan);
+}
+body[theme="cyan"] .section{
+    color: var(--dark-cyan);
+}
+
+body[theme="salmon"]{
+    background-color: var(--salmon);
+}
+body[theme="salmon"] .section{
+    color: var(--dark-salmon);
+}
+
+body[theme="white"]{
+    background-color: var(--white);
+}
+body[theme="white"] .section{
+    color: var(--black);
+}
+
+.hover-overlay{
+    z-index: -1;
+     position: absolute;
+     background-color: #93c5fd;
+     top: -110%;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.overlay-img{
+    transition: all ease 0.5s;
+}
+.member:hover .hover-overlay{
+    top: 0%;
+}
+.member:hover .overlay-img{
+    top: 2%;
+}
